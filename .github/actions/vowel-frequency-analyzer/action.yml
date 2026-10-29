@@ -1,0 +1,19 @@
+# Activity 5: metadata for the custom Docker action.
+# ci.yml runs the container directly, so this file documents how the action
+# would be reused by other workflows once its image is published to ghcr.io.
+name: "Vowel Frequency Analyzer"
+description: "Counts the vowels in a text file and logs the result, contributor and timestamp to README.md"
+
+inputs:
+  file:
+    description: "Path to the text file to analyse"
+    required: true
+    default: "data.txt"
+
+runs:
+  using: "docker"
+  # Replace smogeq (lowercase) once you publish the image.
+  image: "docker://ghcr.io/smogeq/vowel-frequency-analyzer:latest"
+  entrypoint: "/app/.github/scripts/entrypoint.sh"
+  env:
+    FILE: ${{ inputs.file }}
