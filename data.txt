@@ -1,0 +1,3 @@
+Contributors upload raw text files to this repository.
+Every time this file changes, the workflow counts the vowels and logs the result in the README.
+Edit this text, commit, and push to see a new entry appear.

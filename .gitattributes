@@ -1,0 +1,6 @@
+# Keep Linux line endings on scripts, even when edited on Windows.
+# Without this, Windows can save scripts with CRLF and the container fails
+# with "bad interpreter: /bin/bash^M".
+*.sh text eol=lf
+*.py text eol=lf
+Dockerfile text eol=lf
